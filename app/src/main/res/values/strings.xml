@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Калькулятор для вентиляции</string>
+    <string name="random_heading">Это случайное число между 0 и %1d.</string>
+    <string name="buttonSpeedText">Скорость м/с</string>
+    <string name="textViewmm">мм</string>
+    <string name="textViewRectAText">Сторона a</string>
+    <string name="textViewRectBText">Сторона b</string>
+    <string name="textViewCircText">Диаметр воздуховода</string>
+    <string name="textViewSettingsText">Параметры воздуховода</string>
+    <string name="buttonFloatText">расход м3/ч</string>
+    <string name="radioButtonRectText">Квадратный</string>
+    <string name="radioButtonCircText">Круглый</string>
+    <string name="textViewFlow1Text">м3/ч</string>
+    <string name="textViewFlowText">Расход воздуха, G</string>
+    <string name="textViewSpeed1Text">м/с</string>
+    <string name="DefaultHint"> </string>
+    <string name="textViewSpeedText">Скорость воздуха, V</string>
+    <string name="defaultValue">100</string>
+</resources>
