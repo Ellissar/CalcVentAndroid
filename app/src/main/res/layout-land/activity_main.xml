@@ -26,30 +26,6 @@
         app:layout_constraintTop_toTopOf="@+id/buttonFloat" />
 
     <TextView
-        android:id="@+id/textViewRectAmm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewmm"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectA"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectA"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectA" />
-
-    <TextView
-        android:id="@+id/textViewRectBmm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textViewmm"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectB"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectB"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectB" />
-
-    <TextView
         android:id="@+id/textViewRectA"
         android:layout_width="120dp"
         android:layout_height="24dp"
@@ -73,6 +49,30 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectB"
         app:layout_constraintStart_toEndOf="@+id/textViewRectAmm"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectB" />
+
+    <TextView
+        android:id="@+id/textViewRectAmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewmm"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectA"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectA"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectA" />
+
+    <TextView
+        android:id="@+id/textViewRectBmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewmm"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectB"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectB"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberRectB" />
 
     <EditText
@@ -266,5 +266,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonFloat" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupRect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="textViewRectA,textViewRectB,textViewRectAmm,textViewRectBmm,editTextNumberRectB,editTextNumberRectA" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupCirc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="textViewCirc,editTextNumberCirc,textViewCirc1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

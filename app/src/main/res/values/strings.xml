@@ -16,4 +16,8 @@
     <string name="DefaultHint"> </string>
     <string name="textViewSpeedText">Скорость воздуха, V</string>
     <string name="defaultValue">100</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Первый фрагмент</string>
+    <string name="hello_blank_fragment2">Второй фрагмент</string>
+    <string name="hello_blank_fragment3">Третий фрагмент</string>
 </resources>

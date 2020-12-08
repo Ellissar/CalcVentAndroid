@@ -7,6 +7,7 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.math.RoundingMode
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
@@ -16,29 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         radioGroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
             if (checkedId == R.id.radioButtonCirc){
-                textViewRectA.visibility = View.INVISIBLE
-                editTextNumberRectA.visibility = View.INVISIBLE
-                textViewRectAmm.visibility = View.INVISIBLE
-                textViewRectB.visibility = View.INVISIBLE
-                editTextNumberRectB.visibility = View.INVISIBLE
-                textViewRectBmm.visibility = View.INVISIBLE
-
-                textViewCirc.visibility = View.VISIBLE
-                editTextNumberCirc.visibility = View.VISIBLE
-                textViewCirc1.visibility = View.VISIBLE
+                groupRect.visibility = View.INVISIBLE
+                groupCirc.visibility = View.VISIBLE
             }
 
             if (checkedId == R.id.radioButtonRect){
-                textViewRectA.visibility = View.VISIBLE
-                editTextNumberRectA.visibility = View.VISIBLE
-                textViewRectAmm.visibility = View.VISIBLE
-                textViewRectB.visibility = View.VISIBLE
-                editTextNumberRectB.visibility = View.VISIBLE
-                textViewRectBmm.visibility = View.VISIBLE
-
-                textViewCirc.visibility = View.INVISIBLE
-                editTextNumberCirc.visibility = View.INVISIBLE
-                textViewCirc1.visibility = View.INVISIBLE
+                groupRect.visibility = View.VISIBLE
+                groupCirc.visibility = View.INVISIBLE
             }
         })
     }
@@ -87,12 +72,14 @@ class MainActivity : AppCompatActivity() {
 
         if (radioButtonCirc.isChecked){
             L = 3600.0 * SCirc() * V
-            editTextNumberFlow.setText("%.2f".format(L))
+            L = L.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
+            editTextNumberFlow.setText("$L")
         }
 
         if (radioButtonRect.isChecked){
             L = 3600.0 * SRect() * V
-            editTextNumberFlow.setText("%.2f".format(L))
+            L = L.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
+            editTextNumberFlow.setText("$L")
         }
     }
 
@@ -111,12 +98,14 @@ class MainActivity : AppCompatActivity() {
 
         if (radioButtonCirc.isChecked){
             V = G / SCirc()
-            editTextNumberSpeed.setText("%.2f".format(V))
+            V = V.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
+            editTextNumberSpeed.setText("$V")
         }
 
         if (radioButtonRect.isChecked){
             V = G / SRect()
-            editTextNumberSpeed.setText("%.2f".format(V))
+            V = V.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
+            editTextNumberSpeed.setText("$V")
         }
     }
 
