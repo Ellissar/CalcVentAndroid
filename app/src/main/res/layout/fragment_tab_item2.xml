@@ -11,7 +11,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Объемный расход"
+        android:text="@string/textView1Text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="По проекту:"
+        android:text="@string/textViewProject1Text"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumberProject"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Фактический:"
+        android:text="@string/textViewFact1Text"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumberFact"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,10 +41,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/DefaultHint"
         android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/textViewProject1"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextNumberFact"
@@ -52,16 +54,18 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/DefaultHint"
         android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/textViewFact1"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberProject" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberProject"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textViewProject2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="м3/ч"
+        android:text="@string/m3h"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumberProject"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberProject" />
 
@@ -69,7 +73,7 @@
         android:id="@+id/textViewFact2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="м3/ч"
+        android:text="@string/m3h"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumberFact"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberFact" />
 
@@ -78,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Невязка"
+        android:text="@string/textView2Text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -91,17 +95,19 @@
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/DefaultHint"
         android:inputType="numberSigned"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textViewPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="%"
+        android:text="@string/Percent"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumberResult"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberResult" />
 
@@ -110,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Посчитать невязку"
+        android:text="@string/buttonCalcText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberResult" />
