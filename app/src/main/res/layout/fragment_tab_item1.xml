@@ -1,14 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentTabItem1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment1" />
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupRect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="textViewRectA,textViewRectB,textViewRectAmm,textViewRectBmm,editTextNumberRectB,editTextNumberRectA" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupCirc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="textViewCirc,editTextNumberCirc,textViewCirc1" />
+
+    <Button
+        android:id="@+id/buttonFloat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/buttonFloatText"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSpeed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberRectB" />
+
+    <Button
+        android:id="@+id/buttonSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonSpeedText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFloat"
+        app:layout_constraintTop_toTopOf="@+id/buttonFloat" />
+
+    <TextView
+        android:id="@+id/textViewCirc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewmm"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberCirc"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberCirc"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberCirc" />
+
+    <TextView
+        android:id="@+id/textViewCirc"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/textViewCircText"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberCirc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberCirc" />
+
+    <EditText
+        android:id="@+id/editTextNumberCirc"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/DefaultHint"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:text="@string/defaultValue"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textViewCirc"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textViewRectBmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewmm"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectB"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectB"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectB" />
+
+    <TextView
+        android:id="@+id/textViewRectB"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/textViewRectBText"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectB" />
+
+    <EditText
+        android:id="@+id/editTextNumberRectB"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/DefaultHint"
+        android:inputType="number"
+        android:text="@string/defaultValue"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textViewRectB"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberRectA" />
+
+    <TextView
+        android:id="@+id/textViewRectAmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewmm"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectA"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberRectA"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectA" />
+
+    <TextView
+        android:id="@+id/textViewRectA"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/textViewRectAText"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberRectA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberRectA" />
+
+    <EditText
+        android:id="@+id/editTextNumberRectA"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/DefaultHint"
+        android:inputType="number"
+        android:text="@string/defaultValue"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/textViewRectA"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textViewFlow"
+        android:layout_width="180dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/textViewFlowText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberFlow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberFlow" />
+
+    <EditText
+        android:id="@+id/editTextNumberFlow"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/DefaultHint"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textViewFlow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFlowUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewFlow1Text"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberFlow"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberFlow"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberFlow" />
+
+    <TextView
+        android:id="@+id/textViewSpeed"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/textViewSpeedText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberSpeed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberSpeed" />
+
+    <EditText
+        android:id="@+id/editTextNumberSpeed"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/DefaultHint"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textViewSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberFlow" />
+
+    <TextView
+        android:id="@+id/textViewSpeedUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewSpeed1Text"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberSpeed"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberSpeed"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberSpeed"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <TextView
+        android:id="@+id/textViewSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/textViewSettingsText"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSpeed" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checkedButton="@id/radioButtonCirc"
+        android:keepScreenOn="false"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSettings">
+
+        <RadioButton
+            android:id="@+id/radioButtonCirc"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/radioButtonCircText" />
+
+        <RadioButton
+            android:id="@+id/radioButtonRect"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:text="@string/radioButtonRectText" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

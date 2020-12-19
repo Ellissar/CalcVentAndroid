@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="random_heading">Это случайное число между 0 и %1d.</string>
-</resources>

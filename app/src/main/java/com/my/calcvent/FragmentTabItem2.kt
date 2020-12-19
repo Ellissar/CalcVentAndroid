@@ -1,10 +1,14 @@
 package com.my.calcvent
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import java.math.RoundingMode
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +37,12 @@ class FragmentTabItem2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val rootView = inflater.inflate(R.layout.fragment_tab_item2, container, false)
+
+        val buttonCalc = rootView.findViewById<Button>(R.id.buttonCalc)
+        buttonCalc.setOnClickListener(::calcDiscrepancy)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_item2, container, false)
+        return rootView
     }
 
     companion object {
@@ -55,5 +63,28 @@ class FragmentTabItem2 : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    //вычисление невязки
+    private fun calcDiscrepancy(view: View?) {
+        val editTextNumberProject = activity?.findViewById<EditText>(R.id.editTextNumberProject)
+        val editTextNumberFact = activity?.findViewById<EditText>(R.id.editTextNumberFact)
+        val editTextNumberResult = activity?.findViewById<EditText>(R.id.editTextNumberResult)
+
+        val proj: Double = try{ editTextNumberProject?.text.toString().toDouble()
+        } catch (e: Exception) {
+            Toast.makeText(activity, "Введите расход воздуха по проекту", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val fact: Double = try{ editTextNumberFact?.text.toString().toDouble()
+        } catch (e: Exception) {
+            Toast.makeText(activity, "Введите расход воздуха фактический", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        var result: Double = ((fact - proj)/proj)*100
+        result = result.toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
+        editTextNumberResult?.setText("$result")
     }
 }
